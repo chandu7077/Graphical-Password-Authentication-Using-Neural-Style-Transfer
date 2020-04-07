@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>AICS</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fingerprintjs2/1.5.1/fingerprint2.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<style>
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floatswidth:100%">) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+</head>
+
+<body style="background-color:#0c5460">
+
+  <div class="row">
+   <div class="column">
+     <img src=' {{ url1 }}' alt="Snow" style="width:200px;height:200px;">
+   </div>
+   <div class="column">
+     <img src=' {{ url2 }}' alt="Forest" style="width:200px;height:200px;">
+   </div>
+   <div class="column">
+     <img src=' {{ url3 }}' alt="Mountains" style="width:200px;height:200px;">
+   </div>
+ </div>
+
+</body>
+</html>

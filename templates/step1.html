@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<script type="text/javascript" src="{{ url_for('static', filename='js/popper.js') }}"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+
+<body align="center">
+<div style="background-color:lightblue" align="center">
+<img src=' {{ url[0] }}'  onclick=clic(this) alt="Girl in a jacket" style="width:50px;height:50px;">
+<img src=' {{ url[1] }}'  onclick=clic(this) alt="Girl in a jacket" style="width:50px;height:50px;">
+<img src=' {{ url[2] }}'  onclick=clic(this) alt="Girl in a jacket" style="width:50px;height:50px;"></br>
+<img src=' {{ url[3] }}'  onclick=clic(this) alt="Girl in a jacket" style="width:50px;height:50px;">
+<img src=' {{ url[4] }}'  onclick=clic(this) alt="Girl in a jacket" style="width:50px;height:50px;">
+<img src=' {{ url[5] }}'  onclick=clic(this) alt="Girl in a jacket" style="width:50px;height:50px;"></br>
+<img src=' {{ url[6] }}'  onclick=clic(this) alt="Girl in a jacket" style="width:50px;height:50px;">
+<img src=' {{ url[7] }}'  onclick=clic(this) alt="Girl in a jacket" style="width:50px;height:50px;">
+<img src=' {{ url[8] }}'  onclick=clic(this) alt="Girl in a jacket" style="width:50px;height:50px;">
+</br>
+</div>
+
+</body>
+
+<script type="text/javascript">
+function clic(img) {
+var nam={{name|tojson}}
+var url=img.src;
+  axios.post('/login/check1', {url}).then(response => {
+          console.log(response.data);
+          if(response.data=="ok")
+          {
+            var ur="http://127.0.0.1:5000/login/step2"+"?nam="+nam;
+            window.location.replace(ur);
+          //  axios.post('/login/step2', {nam}).then(response => {
+
+            //})
+          }
+          else if(response.data="no")
+          {
+            alert("Wrong Paassword")
+            window.location.replace("http://127.0.0.1:5000");
+          }
+       })
+
+  }
+</script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/popper.js') }}"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  	<script type="text/javascript" src="{{ url_for('static', filename='js/axios.js') }}"></script>
+
+</html>
