@@ -204,7 +204,7 @@ def login2():
 
 @app.route("/final")
 def final():
-    return render_template("bannu.html")
+    return render_template("chandu.html")
 
 checkcnt=0
 @app.route("/login/check2",methods=["POST","GET"])
